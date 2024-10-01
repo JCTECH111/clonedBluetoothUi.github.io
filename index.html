@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+
+<body class=" text-white">
+    <div class="p-6 max-w-md mx-auto">
+        <!-- Profile Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-lg">Timothy E.</h1> 
+            <i class='bx bx-cog greenish text-3xl'></i>
+        </div>
+        <!-- Device Buttons -->
+        <div class="flex justify-between gap-3 mb-4 overflow-x-auto">
+            <button class="px-4 py-2 phones rounded-full whitespace-nowrap">iPhone 13</button>
+            <button class="px-4 py-2 phones rounded-full whitespace-nowrap">Samsung 22 Ultra</button>
+            <button class="px-4 py-2 phones rounded-full whitespace-nowrap">Watch</button>
+            <button class="px-4 py-2 phones rounded-full whitespace-nowrap">Watch</button>
+            <button class="px-4 py-2 phones rounded-full whitespace-nowrap">Samsung 22 Ultra</button>
+            <button class="px-4 py-2 phones rounded-full whitespace-nowrap">Watch</button>
+            <button class="px-4 py-2 phones rounded-full whitespace-nowrap">Watch</button>
+        </div>
+        
+        <!-- Charging Circle -->
+        <div class="w-full flex items-center align-center justify-center">
+            <div class="circle">
+                <div class="progress-circle">
+                    <div class="progress-ring" style="--progress: 75%">
+                        <div id="dot"></div><!-- Change the value to update progress -->
+                    </div> 
+                    
+                    <div class="border">
+                        <div class="circular-button flex flex-col gap-2">
+                            <i class="bx bxs-battery-charging  text-green-500"></i>
+                            <div class="flex flex-col relative">
+                                <span class="text-3xl font-bold greenish" id="percentage">70%</span>
+                                <span>charged</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <p class="text-center mb-6"><span class="text-yellow-400">50 mins </span>left to fully charge</p>
+        <!-- Connected Devices -->
+        <div class="flex gap-4">
+            <h2 class="text-lg mb-4">Connected Devices</h2>
+            <div class="rounded-full h-6 w-6 flex text-center align-center justify-center bg-green-400 text-gray-700">
+                <span>4</span>
+            </div>
+        </div>
+        <!-- Display Previously Connected Devices -->
+        <div id="previousDevicesContainer" class="mb-6">
+            <h2 class="text-lg mb-4">Previously Connected Devices</h2>
+            <ul id="previousDevicesList" class="list-disc pl-5"></ul>
+        </div>
+        <div class=" rounded-lg p-4 mb-6">
+            <div class="flex justify-between gap-2">
+                <div class="text-center flex flex-col gap-2 bg">
+                    <i class='bx bx-devices greenish text-2xl' ></i>
+                    <div class="text-lg">Phone</div>
+                </div>
+                <div class="text-center flex flex-col gap-2 bg">
+                    <i class='bx bx-laptop greenish text-2xl' ></i>
+                    <div class="text-lg">Laptop</div>
+                </div>
+                <div class="text-center flex flex-col gap-2 bg">
+                    <i class='bx bxs-watch-alt greenish text-2xl'></i>
+                    <div class="text-lg">Watch</div>
+                </div>
+            </div>
+        </div>
+        <!-- Connect New Device Button -->
+        <button id="connectDeviceButton" class="w-full py-2 bg-blue rounded-lg text-gray-700  flex text-center align-center justify-center gap-3"><span>Connect new device</span> <i class='bx bx-plus  text-2xl'></i></button>
+    </div>
+
+    <!-- Modal for Bluetooth Search -->
+    <div id="bluetoothModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden overflow-x-scroll">
+        <div class="bg-gray-800 rounded-lg p-6">
+            <h2 class="text-lg mb-4">Searching for Bluetooth Devices...</h2>
+            <ul id="bluetoothDeviceList" class="mb-4">
+                <!-- Dynamic Bluetooth devices will be listed here -->
+            </ul>
+            <button id="closeModalButton" class="py-2 px-4 bg-red-600 rounded-lg">Close</button>
+        </div>
+    </div>
+    <!-- Success or Error Notifications -->
+    <div id="notification" class="hidden fixed top-7 right-4 bg-red-600 text-white py-2 px-4 rounded-lg">
+        <p id="notificationText"></p>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

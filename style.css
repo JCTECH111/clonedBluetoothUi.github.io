@@ -1,0 +1,99 @@
+body{
+    background: rgb(16, 25, 27);
+
+}
+*{
+    border: none !important;
+    box-sizing: border-box;
+}
+.greenish{
+    color: rgb(143, 229, 246);
+}
+.circle{
+    background: rgb(30, 49, 53);
+box-shadow: inset 5px 5px 69px rgb(0, 0, 0), inset -5px -25px 10px rgba(0, 0, 0, 0.3);
+
+border-radius: 50%;
+height: 15rem;
+width: 15rem;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+}
+.border{
+    height: 9rem;
+    width:  9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(16, 25, 27);
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    border-radius: 50%;
+}
+.circular-button {
+    width: 8rem; /* Width of the circular button */
+    height: 8rem; /* Height of the circular button */
+    background-color: rgb(18, 36, 41); /* Button color */
+    color: white; /* Text color */
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:inset 0 4px 13px rgb(63, 148, 167); /* Shadow for depth */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer on hover */
+    position: absolute;
+
+
+}
+
+
+.progress-ring {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    background: conic-gradient(
+        rgb(135, 218, 234) var(--progress),
+        rgb(15, 24, 26) var(--progress)
+    ) ;
+    padding: 10px; /* Add padding to create space */
+    box-sizing: border-box; /* Ensures padding does not affect the overall size */
+    position: relative;
+}
+
+.progress-ring::after {
+    content: '';
+    position: absolute;
+    top: 0rem;
+    left: 6rem;
+    width: 3rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    background: rgb(143, 229, 246); /* Inner color */
+    clip-path: circle(75px at center); /* Clip to create a circular mask */
+}
+#dot {
+    position: relative;
+    top: 5rem;
+    left: -0.7rem;
+    width: 3rem; /* Size of the dot */
+    height: 3rem; /* Size of the dot */
+    border-radius: 50%; /* Circular shape */
+    background: #b6f8f8; /* Inner color */
+    pointer-events: none; /* Prevent dot from capturing mouse events */
+}
+.phones{
+    color:rgb(135, 218, 234) ;
+    border: 1px solid rgb(135, 218, 234) !important;
+}
+.bg{
+    background: rgb(21, 35, 37);
+    padding: 1rem ;
+    border-radius: 1rem;
+}
+.bg-blue{
+    background: rgb(135, 218, 234);
+}
